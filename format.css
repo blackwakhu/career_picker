@@ -1,0 +1,39 @@
+body{
+    background-color: blue;
+}
+h1{
+    text-transform: uppercase;
+    text-align: center;
+}
+#main{
+    background-color: rgba(244, 235, 200, .4);
+    height: 150px;
+    width: 440px;
+    border: outset;
+    border-width: 1px;
+    border-color: wheat;
+    padding: 10px;
+    display: block;
+    border-radius: 10px;
+    align-self: center;
+    margin: 150px auto 200px auto;
+    text-align: center;
+}
+button{
+    margin-top: 10px;
+    border: outset;
+    background-color: rgba(91, 230, 26, 0.89);
+}
+
+button:hover{
+    background-color: yellowgreen;
+}
+
+input{
+    border-radius: 3px;
+    border: 1px 1px 1px 1px;
+    border: inset;
+}
+p{
+    text-transform: capitalize;
+}
