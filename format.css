@@ -10,8 +10,8 @@ h1  {
 
 #main  {
     background-color: rgba(244, 235, 200, .4);
-    height: 150px;
-    width: 440px;
+    height: 500px;
+    width: 50%;
     border: outset;
     border-width: 1px;
     border-color: wheat;

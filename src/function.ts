@@ -24,6 +24,42 @@ const career_div: HTMLDivElement = document.querySelector("#career_div")
 const questions = ["are you creative?", "do you love nature?", "are you into helping others?", "do you love to build new things?", "do you consider yourself to be compassionate?"]
 const careers = ["doctor", "computer scientist", "teacher","engineer", "scientist","surgeon","pilot","enviromentalist","model","astronaught"]
 
+const career_dict = [
+    {
+        "career": [
+            "Doctor", "Surgeon"
+        ],
+        "score": 1
+    }, 
+    {
+        "career": [
+            "Computer Scientist", "Engineer"
+        ],
+        "score": 2
+    },
+    {
+        "career": [
+            "Teacher"
+        ],
+        "score": 3
+    },
+    {
+        "career": [
+            "Scientist", "Enviromentalist"
+        ],
+        "score": 4
+    }, 
+    {},
+    {
+        "career":
+        [
+            "Pilot", "Astronaut"
+        ],
+        "score": 5
+    }
+]
+
+
 // variables
 let index: number = 0
 let choose: number = 0

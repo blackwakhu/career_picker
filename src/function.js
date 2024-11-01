@@ -17,6 +17,39 @@ var question_div = document.querySelector("#question_div");
 var career_div = document.querySelector("#career_div");
 var questions = ["are you creative?", "do you love nature?", "are you into helping others?", "do you love to build new things?", "do you consider yourself to be compassionate?"];
 var careers = ["doctor", "computer scientist", "teacher", "engineer", "scientist", "surgeon", "pilot", "enviromentalist", "model", "astronaught"];
+var career_dict = [
+    {
+        "career": [
+            "Doctor", "Surgeon"
+        ],
+        "score": 1
+    },
+    {
+        "career": [
+            "Computer Scientist", "Engineer"
+        ],
+        "score": 2
+    },
+    {
+        "career": [
+            "Teacher"
+        ],
+        "score": 3
+    },
+    {
+        "career": [
+            "Scientist", "Enviromentalist"
+        ],
+        "score": 4
+    },
+    {},
+    {
+        "career": [
+            "Pilot", "Astronaut"
+        ],
+        "score": 5
+    }
+];
 // variables
 var index = 0;
 var choose = 0;
