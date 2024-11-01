@@ -1,1 +1,3 @@
-console.log("Hello world")
+let btn: HTMLDivElement = document.querySelector("#btn")
+
+let body: HTMLBodyElement = document.querySelector("body")

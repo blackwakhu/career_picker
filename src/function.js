@@ -1,1 +1,2 @@
-console.log("Hello world");
+var btn = document.querySelector("#btn");
+var body = document.querySelector("body");
