@@ -1,11 +1,14 @@
-body{
+/* Overall styles */
+body  {
     background-color: blue;
 }
-h1{
+
+h1  {
     text-transform: uppercase;
     text-align: center;
 }
-#main{
+
+#main  {
     background-color: rgba(244, 235, 200, .4);
     height: 150px;
     width: 440px;
@@ -19,21 +22,29 @@ h1{
     margin: 150px auto 200px auto;
     text-align: center;
 }
-button{
+
+button  {
     margin-top: 10px;
     border: outset;
     background-color: rgba(91, 230, 26, 0.89);
 }
 
-button:hover{
+button:hover  {
     background-color: yellowgreen;
 }
 
-input{
+input  {
     border-radius: 3px;
     border: 1px 1px 1px 1px;
     border: inset;
 }
-p{
+
+p  {
     text-transform: capitalize;
+}
+
+/* other */
+
+#question_div, #career_div  {
+    visibility: hidden;
 }
