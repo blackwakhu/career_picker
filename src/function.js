@@ -4,3 +4,8 @@ var questions = ["are you creative?", "do you love nature?", "are you into helpi
 var index = 0;
 var careers = ["doctor", "computer scientist", "teacher", "engineer", "scientist", "surgeon", "pilot", "enviromentalist", "model", "astronaught"];
 var choose = 0;
+var get_value = function () {
+    color_change();
+};
+var color_change = function () { };
+btn === null || btn === void 0 ? void 0 : btn.addEventListener("click", get_value);
