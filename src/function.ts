@@ -1,13 +1,13 @@
 // buttons elements
 const name_btn = document.querySelector<HTMLButtonElement>("#name_btn")
-const level_btns = [
+const level_btns: {"btn": HTMLButtonElement, "score": number}[] = [
     {
         "btn": document.querySelector<HTMLButtonElement>("#very_good"), 
-        "score": 1
+        "score": 5
     },
     {
         "btn": document.querySelector<HTMLButtonElement>("#good"), 
-        "score": 2
+        "score": 4
     },
     {
         "btn": document.querySelector<HTMLButtonElement>("#average"), 
@@ -15,11 +15,11 @@ const level_btns = [
     },
     {
         "btn": document.querySelector<HTMLButtonElement>("#bad"), 
-        "score": 4
+        "score": 2
     },
     {
-        "btn": document.querySelector<HTMLButtonElement>("#very_badd"),
-        "score": 5
+        "btn": document.querySelector<HTMLButtonElement>("#very_bad"),
+        "score": 1
     }
 ]
 
@@ -41,7 +41,7 @@ const question_div = document.querySelector<HTMLDivElement>("#question_div")
 const career_div = document.querySelector<HTMLDivElement>("#career_div")
 
 // questions list
-const questions = [
+const questions: string[] = [
     "Rate your creativity?", 
     "Rate your love for the outdoors?", 
     "Are you willing to be helpful?", 
@@ -51,7 +51,7 @@ const questions = [
 ]
 
 
-const career_dict = [
+const career_dict: {"career": string[], "score": number}[] = [
     {
         "career": [
             "Doctor", "Surgeon"
@@ -76,7 +76,6 @@ const career_dict = [
         ],
         "score": 4
     }, 
-    {},
     {
         "career":
         [
@@ -89,7 +88,6 @@ const career_dict = [
 
 // variables
 let index: number = 0
-let choose: number = 0
 let score: number = 0
 let name_var:string = ""
 
@@ -112,6 +110,10 @@ let get_question = function ()  {
     if (index < questions.length)  {
         beginner.innerHTML = questions[index]
         index += 1
+    } else  {
+        question_div.style.display = "none";
+        career_div.style.display = "block";
+        career_div.style.visibility = "visible";
     }
 }
 
@@ -123,8 +125,30 @@ let color_change = function () {
     body.style.background = `rgb(${color})`
 }
 
+let get_career = function ()  {
+    let avg:number = score / questions.length
+    let career: string[]
+    for (let i: number = 0; i < career_dict.length; i++){
+        if (career_dict[i].score == avg)  {
+            career = career_dict[i].career
+            break
+        }
+    }
+    return career
+}
 
 // adding event listeners
 name_btn.addEventListener("click", get_name)
 
-// level_btns.forEach()
+// for (let y: number = 0; y < level_btns.length; y++)  {
+//     level_btns[y].btn.addEventListener("click", function ()  {
+//         console.log(level_btns[y].btn.innerHTML)
+//     })
+// }
+
+
+level_btns.forEach(function (btn)  {
+    btn.btn.addEventListener("click", function ()  {
+      console.log(btn.btn.innerHTML)  
+    })
+})

@@ -3,11 +3,11 @@ var name_btn = document.querySelector("#name_btn");
 var level_btns = [
     {
         "btn": document.querySelector("#very_good"),
-        "score": 1
+        "score": 5
     },
     {
         "btn": document.querySelector("#good"),
-        "score": 2
+        "score": 4
     },
     {
         "btn": document.querySelector("#average"),
@@ -15,11 +15,11 @@ var level_btns = [
     },
     {
         "btn": document.querySelector("#bad"),
-        "score": 4
+        "score": 2
     },
     {
-        "btn": document.querySelector("#very_badd"),
-        "score": 5
+        "btn": document.querySelector("#very_bad"),
+        "score": 1
     }
 ];
 // Body element
@@ -69,7 +69,6 @@ var career_dict = [
         ],
         "score": 4
     },
-    {},
     {
         "career": [
             "Pilot", "Astronaut"
@@ -79,7 +78,6 @@ var career_dict = [
 ];
 // variables
 var index = 0;
-var choose = 0;
 var score = 0;
 var name_var = "";
 // main function for the btn in the names div
@@ -98,6 +96,11 @@ var get_question = function () {
         beginner.innerHTML = questions[index];
         index += 1;
     }
+    else {
+        question_div.style.display = "none";
+        career_div.style.display = "block";
+        career_div.style.visibility = "visible";
+    }
 };
 var color_change = function () {
     var r = Math.floor(Math.random() * 255);
@@ -106,6 +109,26 @@ var color_change = function () {
     var color = "".concat(r, ", ").concat(g, ", ").concat(b);
     body.style.background = "rgb(".concat(color, ")");
 };
+var get_career = function () {
+    var avg = score / questions.length;
+    var career;
+    for (var i = 0; i < career_dict.length; i++) {
+        if (career_dict[i].score == avg) {
+            career = career_dict[i].career;
+            break;
+        }
+    }
+    return career;
+};
 // adding event listeners
 name_btn.addEventListener("click", get_name);
-// level_btns.forEach()
+// for (let y: number = 0; y < level_btns.length; y++)  {
+//     level_btns[y].btn.addEventListener("click", function ()  {
+//         console.log(level_btns[y].btn.innerHTML)
+//     })
+// }
+level_btns.forEach(function (btn) {
+    btn.btn.addEventListener("click", function () {
+        console.log(btn.btn.innerHTML);
+    });
+});
