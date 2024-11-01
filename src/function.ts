@@ -1,5 +1,6 @@
 // buttons elements
 const name_btn: HTMLButtonElement | null = document.querySelector<HTMLButtonElement>("#name_btn")
+const career_btn: HTMLButtonElement | null = document.querySelector<HTMLButtonElement>("#career_btn")
 const level_btns: {"btn": HTMLButtonElement | null, "score": number}[] = [
     {
         "btn": document.querySelector<HTMLButtonElement>("#very_good"), 
@@ -55,15 +56,17 @@ const career_dict: string[] = [ "Doctor, Surgeon", "Computer Scientist, Engineer
 // variables
 let index: number = 0
 let score: number = 0
-let name_var:string = ""
 
 
 // main function for the btn in the names div
 let get_name = function ()  {
     name_p.innerHTML = `Hello ${name_inp?.value}`
+    name_inp.value = ""
+    name_inp.innerHTML = ""
     name_div.style.display = "none";
     question_div.style.display = "block";
-    question_div.style.visibility = "visible";
+    score = 0
+    index = 0
     
     // for changing the background color
     color_change()
@@ -79,7 +82,6 @@ let get_question = function ()  {
     } else  {
         question_div.style.display = "none";
         career_div.style.display = "block";
-        career_div.style.visibility = "visible";
         compliment.innerHTML = `you likely careeer prospects may include <br> ${get_career()}`
     }
 }
@@ -99,6 +101,12 @@ let get_career = function ()  {
 
 // adding event listeners
 name_btn?.addEventListener("click", get_name)
+career_btn?.addEventListener("click", function ()  {
+    color_change()
+    name_div.style.display = "block"
+    career_div.style.display = "none"
+    name_p.innerHTML = "What is your name?"
+})
 
 level_btns.forEach(function (btn)  {
     btn.btn?.addEventListener("click", function ()  {

@@ -50,7 +50,7 @@ p  {
 /* other */
 
 #question_div, #career_div  {
-    visibility: hidden;
+    display: none;
 }
 
 .btn_select  {

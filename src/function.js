@@ -1,5 +1,6 @@
 // buttons elements
 var name_btn = document.querySelector("#name_btn");
+var career_btn = document.querySelector("#career_btn");
 var level_btns = [
     {
         "btn": document.querySelector("#very_good"),
@@ -47,13 +48,15 @@ var career_dict = ["Doctor, Surgeon", "Computer Scientist, Engineer", "Teacher",
 // variables
 var index = 0;
 var score = 0;
-var name_var = "";
 // main function for the btn in the names div
 var get_name = function () {
     name_p.innerHTML = "Hello ".concat(name_inp === null || name_inp === void 0 ? void 0 : name_inp.value);
+    name_inp.value = "";
+    name_inp.innerHTML = "";
     name_div.style.display = "none";
     question_div.style.display = "block";
-    question_div.style.visibility = "visible";
+    score = 0;
+    index = 0;
     // for changing the background color
     color_change();
     // getting the first question in the list
@@ -67,7 +70,6 @@ var get_question = function () {
     else {
         question_div.style.display = "none";
         career_div.style.display = "block";
-        career_div.style.visibility = "visible";
         compliment.innerHTML = "you likely careeer prospects may include <br> ".concat(get_career());
     }
 };
@@ -84,6 +86,12 @@ var get_career = function () {
 };
 // adding event listeners
 name_btn === null || name_btn === void 0 ? void 0 : name_btn.addEventListener("click", get_name);
+career_btn === null || career_btn === void 0 ? void 0 : career_btn.addEventListener("click", function () {
+    color_change();
+    name_div.style.display = "block";
+    career_div.style.display = "none";
+    name_p.innerHTML = "What is your name?";
+});
 level_btns.forEach(function (btn) {
     var _a;
     (_a = btn.btn) === null || _a === void 0 ? void 0 : _a.addEventListener("click", function () {
