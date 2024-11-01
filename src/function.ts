@@ -11,7 +11,14 @@ let get_value = function ()  {
     color_change()
 }
 
-let color_change = function () {}
+let color_change = function () {
+    let r: number = Math.floor(Math.random() * 255)
+    let g: number = Math.floor(Math.random() * 255)
+    let b: number = Math.floor(Math.random() * 255)
+    let color: string =`${r}, ${g}, ${b}`
+    body.style.background = `rgb(${color})`
+}
 
 
+// adding event listeners
 btn?.addEventListener("click", get_value)
