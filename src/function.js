@@ -1,15 +1,16 @@
 "use strict";
 // buttons elements
 var btn = document.querySelector("#btn");
+var name_btn = document.querySelector("#name_btn");
 // Body element
 var body = document.querySelector("body");
 // paragraph elements
 var beginner = document.querySelector("#beginner");
 var compliment = document.querySelector("#compliment");
 var name_p = document.querySelector("#name_p");
-// entery elements
+// entry elements
 var entry = document.querySelector("#entry");
-var name_inp = document.querySelector("#name_inpt");
+var name_inp = document.querySelector("#name_inp");
 // div elements
 var name_div = document.querySelector("#name_div");
 var question_div = document.querySelector("#question_div");
@@ -20,7 +21,15 @@ var careers = ["doctor", "computer scientist", "teacher", "engineer", "scientist
 var index = 0;
 var choose = 0;
 var score = 0;
-// main function
+var name_var = "";
+// main function for the btn in the names div
+var get_name = function () {
+    name_p.innerHTML = "Hello ".concat(name_inp.value);
+    name_div.style.display = "none";
+    question_div.style.display = "block";
+    question_div.style.visibility = "visible";
+};
+// main function for the btn in the questions div
 var get_value = function () {
     if (index % 2 == 0) {
         // gives the asks user to state their name
@@ -67,4 +76,5 @@ var color_change = function () {
     body.style.background = "rgb(".concat(color, ")");
 };
 // adding event listeners
-btn === null || btn === void 0 ? void 0 : btn.addEventListener("click", get_value);
+btn.addEventListener("click", get_value);
+name_btn.addEventListener("click", get_name);

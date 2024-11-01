@@ -2,6 +2,7 @@
 
 // buttons elements
 const btn: HTMLButtonElement = document.querySelector("#btn")
+const name_btn: HTMLButtonElement = document.querySelector("#name_btn")
 
 // Body element
 const body: HTMLBodyElement  = document.querySelector("body")
@@ -11,9 +12,9 @@ const beginner: HTMLParagraphElement = document.querySelector("#beginner")
 const compliment: HTMLParagraphElement = document.querySelector("#compliment")
 const name_p: HTMLParagraphElement = document.querySelector("#name_p")
 
-// entery elements
+// entry elements
 const entry: HTMLInputElement = document.querySelector("#entry")
-const name_inp: HTMLInputElement = document.querySelector("#name_inpt")
+const name_inp: HTMLInputElement = document.querySelector("#name_inp")
 
 // div elements
 const name_div: HTMLDivElement = document.querySelector("#name_div")
@@ -27,9 +28,18 @@ const careers = ["doctor", "computer scientist", "teacher","engineer", "scientis
 let index: number = 0
 let choose: number = 0
 let score: number = 0
+let name_var:string = ""
 
 
-// main function
+// main function for the btn in the names div
+let get_name = function ()  {
+    name_p.innerHTML = `Hello ${name_inp.value}`
+    name_div.style.display = "none";
+    question_div.style.display = "block";
+    question_div.style.visibility = "visible";
+}
+
+// main function for the btn in the questions div
 let get_value = function ()  {
     if (index % 2 == 0)  {
         // gives the asks user to state their name
@@ -81,4 +91,5 @@ let color_change = function () {
 
 
 // adding event listeners
-btn?.addEventListener("click", get_value)
+btn.addEventListener("click", get_value)
+name_btn.addEventListener("click", get_name)
