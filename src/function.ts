@@ -1,5 +1,7 @@
-const btn: HTMLDivElement | null = document.querySelector("#btn")
-const body: HTMLBodyElement | null = document.querySelector("body")
+const btn: HTMLDivElement = document.querySelector("#btn")
+const body: HTMLBodyElement  = document.querySelector("body")
+const beginner: HTMLDivElement = document.querySelector("#beginner")
+const compliment: HTMLDivElement = document.querySelector("#compliment")
 
 let questions = ["are you creative?", "do you love nature?", "are you into helping others?", "do you love to build new things?", "do you consider yourself to be compassionate?"]
 let index: number = 0
