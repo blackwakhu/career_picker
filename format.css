@@ -1,6 +1,7 @@
 /* Overall styles */
 body  {
     background-color: blue;
+    font-size: large;
 }
 
 h1  {
@@ -24,9 +25,12 @@ h1  {
 }
 
 button  {
+    font-size: large;
     margin-top: 10px;
     border: outset;
     background-color: rgba(91, 230, 26, 0.89);
+    padding: 5px;
+    border-radius: 5px;
 }
 
 button:hover  {
@@ -47,4 +51,30 @@ p  {
 
 #question_div, #career_div  {
     visibility: hidden;
+}
+
+.btn_select  {
+    width: 60%;
+    border: none !important;
+    border-bottom: 2px outset black !important;
+}
+
+.btn_select:hover, #very_bad:hover, #bad:hover, #good:hover, #very_good:hover  {
+    background-color: rgba(0, 0, 255, .5) !important;
+}
+
+#very_bad  {
+    background-color: rgba(255, 0, 0, .5) !important;
+}
+
+#bad  {
+    background-color: rgba(125, 0, 0, .5) !important;
+}
+
+#good  {
+    background-color: rgba(16, 189, 16, 0.5) !important;
+}
+
+#very_good  {
+    background-color: rgba(0, 255, 0, .5) !important;
 }

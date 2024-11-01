@@ -1,7 +1,13 @@
-"use strict";
 // buttons elements
 var btn = document.querySelector("#btn");
 var name_btn = document.querySelector("#name_btn");
+var level_btns = [
+    document.querySelector("#very_good"),
+    document.querySelector("#good"),
+    document.querySelector("#average"),
+    document.querySelector("#bad"),
+    document.querySelector("#very_badd")
+];
 // Body element
 var body = document.querySelector("body");
 // paragraph elements
@@ -22,7 +28,7 @@ var career_dict = [
         "career": [
             "Doctor", "Surgeon"
         ],
-        "score": 1
+        "score": 1,
     },
     {
         "career": [

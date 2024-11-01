@@ -1,25 +1,30 @@
-"use strict"
-
 // buttons elements
-const btn: HTMLButtonElement = document.querySelector("#btn")
-const name_btn: HTMLButtonElement = document.querySelector("#name_btn")
+const btn = document.querySelector<HTMLButtonElement>("#btn")
+const name_btn = document.querySelector<HTMLButtonElement>("#name_btn")
+const level_btns = [
+    document.querySelector<HTMLButtonElement>("#very_good"),
+    document.querySelector<HTMLButtonElement>("#good"),
+    document.querySelector<HTMLButtonElement>("#average"),
+    document.querySelector<HTMLButtonElement>("#bad"),
+    document.querySelector<HTMLButtonElement>("#very_badd")
+]
 
 // Body element
-const body: HTMLBodyElement  = document.querySelector("body")
+const body = document.querySelector<HTMLBodyElement>("body")
 
 // paragraph elements
-const beginner: HTMLParagraphElement = document.querySelector("#beginner")
-const compliment: HTMLParagraphElement = document.querySelector("#compliment")
-const name_p: HTMLParagraphElement = document.querySelector("#name_p")
+const beginner = document.querySelector<HTMLParagraphElement>("#beginner")
+const compliment = document.querySelector<HTMLParagraphElement>("#compliment")
+const name_p = document.querySelector<HTMLParagraphElement>("#name_p")
 
 // entry elements
-const entry: HTMLInputElement = document.querySelector("#entry")
-const name_inp: HTMLInputElement = document.querySelector("#name_inp")
+const entry = document.querySelector<HTMLInputElement>("#entry")
+const name_inp = document.querySelector<HTMLInputElement>("#name_inp")
 
 // div elements
-const name_div: HTMLDivElement = document.querySelector("#name_div")
-const question_div: HTMLDivElement = document.querySelector("#question_div")
-const career_div: HTMLDivElement = document.querySelector("#career_div")
+const name_div = document.querySelector<HTMLDivElement>("#name_div")
+const question_div = document.querySelector<HTMLDivElement>("#question_div")
+const career_div = document.querySelector<HTMLDivElement>("#career_div")
 
 const questions = ["are you creative?", "do you love nature?", "are you into helping others?", "do you love to build new things?", "do you consider yourself to be compassionate?"]
 const careers = ["doctor", "computer scientist", "teacher","engineer", "scientist","surgeon","pilot","enviromentalist","model","astronaught"]
@@ -29,7 +34,7 @@ const career_dict = [
         "career": [
             "Doctor", "Surgeon"
         ],
-        "score": 1
+        "score": 1,
     }, 
     {
         "career": [
