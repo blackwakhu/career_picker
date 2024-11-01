@@ -16,7 +16,7 @@ var get_value = function () {
     }
     else {
         // function that deals with questions
-        choose_function(index, choose);
+        choose_function();
     }
     // responsible for changing the background color
     color_change();
@@ -25,22 +25,27 @@ var name_question = function () {
     beginner.innerHTML = "What is your name?";
     compliment.innerHTML = "Hello ".concat(entry.value);
 };
-var choose_function = function (index, choose) {
+var choose_function = function () {
     if (choose < questions.length) {
-        question_reader(choose);
+        // generates the questions
+        question_reader();
         choose += 1;
     }
     else {
+        // returns the career
         read_career();
         index += 1;
         choose = 0;
     }
 };
-var question_reader = function (choose) {
+var question_reader = function () {
     beginner.innerHTML = questions[choose];
     compliment.innerHTML = "Click the button to continue";
 };
-var read_career = function () { };
+var read_career = function () {
+    beginner.innerHTML = "Your career is ";
+    compliment.innerHTML = careers[Math.floor(Math.random() * careers.length)];
+};
 var color_change = function () {
     var r = Math.floor(Math.random() * 255);
     var g = Math.floor(Math.random() * 255);

@@ -19,7 +19,7 @@ let get_value = function ()  {
         index += 1
     } else  {
         // function that deals with questions
-        choose_function(index, choose)
+        choose_function()
     }
     // responsible for changing the background color
     color_change()
@@ -30,23 +30,28 @@ let name_question = function ()  {
     compliment.innerHTML = `Hello ${entry.value}`
 }
 
-let choose_function = function (index, choose)  {
+let choose_function = function ()  {
     if (choose < questions.length)  {
-        question_reader(choose)
+        // generates the questions
+        question_reader()
         choose += 1
     } else  {
+        // returns the career
         read_career()
         index += 1 
         choose = 0
     }
 }
 
-let question_reader = function (choose) {
+let question_reader = function () {
     beginner.innerHTML = questions[choose]
     compliment.innerHTML = "Click the button to continue"
 }
 
-let read_career = function ()  {}
+let read_career = function ()  {
+    beginner.innerHTML = "Your career is "
+    compliment.innerHTML = careers[Math.floor(Math.random() * careers.length)]
+}
 
 let color_change = function () {
     let r: number = Math.floor(Math.random() * 255)
