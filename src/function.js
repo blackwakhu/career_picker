@@ -1,12 +1,25 @@
+"use strict";
+// buttons elements
 var btn = document.querySelector("#btn");
+// Body element
 var body = document.querySelector("body");
+// paragraph elements
 var beginner = document.querySelector("#beginner");
 var compliment = document.querySelector("#compliment");
+var name_p = document.querySelector("#name_p");
+// entery elements
 var entry = document.querySelector("#entry");
+var name_inp = document.querySelector("#name_inpt");
+// div elements
+var name_div = document.querySelector("#name_div");
+var question_div = document.querySelector("#question_div");
+var career_div = document.querySelector("#career_div");
 var questions = ["are you creative?", "do you love nature?", "are you into helping others?", "do you love to build new things?", "do you consider yourself to be compassionate?"];
 var careers = ["doctor", "computer scientist", "teacher", "engineer", "scientist", "surgeon", "pilot", "enviromentalist", "model", "astronaught"];
+// variables
 var index = 0;
 var choose = 0;
+var score = 0;
 // main function
 var get_value = function () {
     if (index % 2 == 0) {

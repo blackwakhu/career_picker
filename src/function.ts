@@ -1,14 +1,32 @@
-const btn: HTMLDivElement = document.querySelector("#btn")
+"use strict"
+
+// buttons elements
+const btn: HTMLButtonElement = document.querySelector("#btn")
+
+// Body element
 const body: HTMLBodyElement  = document.querySelector("body")
-const beginner: HTMLDivElement = document.querySelector("#beginner")
-const compliment: HTMLDivElement = document.querySelector("#compliment")
+
+// paragraph elements
+const beginner: HTMLParagraphElement = document.querySelector("#beginner")
+const compliment: HTMLParagraphElement = document.querySelector("#compliment")
+const name_p: HTMLParagraphElement = document.querySelector("#name_p")
+
+// entery elements
 const entry: HTMLInputElement = document.querySelector("#entry")
+const name_inp: HTMLInputElement = document.querySelector("#name_inpt")
+
+// div elements
+const name_div: HTMLDivElement = document.querySelector("#name_div")
+const question_div: HTMLDivElement = document.querySelector("#question_div")
+const career_div: HTMLDivElement = document.querySelector("#career_div")
 
 const questions = ["are you creative?", "do you love nature?", "are you into helping others?", "do you love to build new things?", "do you consider yourself to be compassionate?"]
 const careers = ["doctor", "computer scientist", "teacher","engineer", "scientist","surgeon","pilot","enviromentalist","model","astronaught"]
 
+// variables
 let index: number = 0
 let choose: number = 0
+let score: number = 0
 
 
 // main function
