@@ -1,3 +1,9 @@
+/**
+ * Author: Derrick Shibero Wakhu
+ * Date added: November 1 2024
+ * Date last Edited: November 1 2024
+ */
+
 // buttons elements
 const name_btn: HTMLButtonElement | null = document.querySelector<HTMLButtonElement>("#name_btn")
 const career_btn: HTMLButtonElement | null = document.querySelector<HTMLButtonElement>("#career_btn")
