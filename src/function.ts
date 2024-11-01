@@ -1,44 +1,43 @@
 // buttons elements
-const name_btn = document.querySelector<HTMLButtonElement>("#name_btn")
-const level_btns: {"btn": HTMLButtonElement, "score": number}[] = [
+const name_btn: HTMLButtonElement | null = document.querySelector<HTMLButtonElement>("#name_btn")
+const level_btns: {"btn": HTMLButtonElement | null, "score": number}[] = [
     {
         "btn": document.querySelector<HTMLButtonElement>("#very_good"), 
-        "score": 5
-    },
-    {
-        "btn": document.querySelector<HTMLButtonElement>("#good"), 
         "score": 4
     },
     {
-        "btn": document.querySelector<HTMLButtonElement>("#average"), 
+        "btn": document.querySelector<HTMLButtonElement>("#good"), 
         "score": 3
     },
     {
-        "btn": document.querySelector<HTMLButtonElement>("#bad"), 
+        "btn": document.querySelector<HTMLButtonElement>("#average"), 
         "score": 2
     },
     {
-        "btn": document.querySelector<HTMLButtonElement>("#very_bad"),
+        "btn": document.querySelector<HTMLButtonElement>("#bad"), 
         "score": 1
+    },
+    {
+        "btn": document.querySelector<HTMLButtonElement>("#very_bad"),
+        "score": 0
     }
 ]
 
 // Body element
-const body = document.querySelector<HTMLBodyElement>("body")
+const body: HTMLBodyElement | null = document.querySelector<HTMLBodyElement>("body")
 
 // paragraph elements
-const beginner = document.querySelector<HTMLParagraphElement>("#beginner")
-const compliment = document.querySelector<HTMLParagraphElement>("#compliment")
-const name_p = document.querySelector<HTMLParagraphElement>("#name_p")
+const beginner: HTMLParagraphElement | null = document.querySelector<HTMLParagraphElement>("#beginner")
+const compliment: HTMLParagraphElement | null = document.querySelector<HTMLParagraphElement>("#compliment")
+const name_p: HTMLParagraphElement | null = document.querySelector<HTMLParagraphElement>("#name_p")
 
 // entry elements
-const entry = document.querySelector<HTMLInputElement>("#entry")
-const name_inp = document.querySelector<HTMLInputElement>("#name_inp")
+const name_inp: HTMLInputElement | null = document.querySelector<HTMLInputElement>("#name_inp")
 
 // div elements
-const name_div = document.querySelector<HTMLDivElement>("#name_div")
-const question_div = document.querySelector<HTMLDivElement>("#question_div")
-const career_div = document.querySelector<HTMLDivElement>("#career_div")
+const name_div: HTMLDivElement | null = document.querySelector<HTMLDivElement>("#name_div")
+const question_div: HTMLDivElement | null = document.querySelector<HTMLDivElement>("#question_div")
+const career_div: HTMLDivElement | null = document.querySelector<HTMLDivElement>("#career_div")
 
 // questions list
 const questions: string[] = [
@@ -51,40 +50,7 @@ const questions: string[] = [
 ]
 
 
-const career_dict: {"career": string[], "score": number}[] = [
-    {
-        "career": [
-            "Doctor", "Surgeon"
-        ],
-        "score": 1,
-    }, 
-    {
-        "career": [
-            "Computer Scientist", "Engineer"
-        ],
-        "score": 2
-    },
-    {
-        "career": [
-            "Teacher"
-        ],
-        "score": 3
-    },
-    {
-        "career": [
-            "Scientist", "Enviromentalist"
-        ],
-        "score": 4
-    }, 
-    {
-        "career":
-        [
-            "Pilot", "Astronaut"
-        ],
-        "score": 5
-    }
-]
-
+const career_dict: string[] = [ "Doctor, Surgeon", "Computer Scientist, Engineer", "Teacher", "Scientist, Enviromentalist", "Pilot, Astronaut"]
 
 // variables
 let index: number = 0
@@ -114,6 +80,7 @@ let get_question = function ()  {
         question_div.style.display = "none";
         career_div.style.display = "block";
         career_div.style.visibility = "visible";
+        compliment.innerHTML = `you likely careeer prospects may include <br> ${get_career()}`
     }
 }
 
@@ -126,29 +93,17 @@ let color_change = function () {
 }
 
 let get_career = function ()  {
-    let avg:number = score / questions.length
-    let career: string[]
-    for (let i: number = 0; i < career_dict.length; i++){
-        if (career_dict[i].score == avg)  {
-            career = career_dict[i].career
-            break
-        }
-    }
-    return career
+    let avg:number = Math.floor(score / questions.length)
+    return career_dict[avg]
 }
 
 // adding event listeners
-name_btn.addEventListener("click", get_name)
-
-// for (let y: number = 0; y < level_btns.length; y++)  {
-//     level_btns[y].btn.addEventListener("click", function ()  {
-//         console.log(level_btns[y].btn.innerHTML)
-//     })
-// }
-
+name_btn?.addEventListener("click", get_name)
 
 level_btns.forEach(function (btn)  {
-    btn.btn.addEventListener("click", function ()  {
-      console.log(btn.btn.innerHTML)  
+    btn.btn?.addEventListener("click", function ()  {
+        color_change()
+        score += btn.score
+        get_question()  
     })
 })

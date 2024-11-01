@@ -3,23 +3,23 @@ var name_btn = document.querySelector("#name_btn");
 var level_btns = [
     {
         "btn": document.querySelector("#very_good"),
-        "score": 5
-    },
-    {
-        "btn": document.querySelector("#good"),
         "score": 4
     },
     {
-        "btn": document.querySelector("#average"),
+        "btn": document.querySelector("#good"),
         "score": 3
     },
     {
-        "btn": document.querySelector("#bad"),
+        "btn": document.querySelector("#average"),
         "score": 2
     },
     {
-        "btn": document.querySelector("#very_bad"),
+        "btn": document.querySelector("#bad"),
         "score": 1
+    },
+    {
+        "btn": document.querySelector("#very_bad"),
+        "score": 0
     }
 ];
 // Body element
@@ -29,7 +29,6 @@ var beginner = document.querySelector("#beginner");
 var compliment = document.querySelector("#compliment");
 var name_p = document.querySelector("#name_p");
 // entry elements
-var entry = document.querySelector("#entry");
 var name_inp = document.querySelector("#name_inp");
 // div elements
 var name_div = document.querySelector("#name_div");
@@ -44,38 +43,7 @@ var questions = [
     "Do you consider yourself to be compassionate?",
     "Do you consider yourself to be empathetic?"
 ];
-var career_dict = [
-    {
-        "career": [
-            "Doctor", "Surgeon"
-        ],
-        "score": 1,
-    },
-    {
-        "career": [
-            "Computer Scientist", "Engineer"
-        ],
-        "score": 2
-    },
-    {
-        "career": [
-            "Teacher"
-        ],
-        "score": 3
-    },
-    {
-        "career": [
-            "Scientist", "Enviromentalist"
-        ],
-        "score": 4
-    },
-    {
-        "career": [
-            "Pilot", "Astronaut"
-        ],
-        "score": 5
-    }
-];
+var career_dict = ["Doctor, Surgeon", "Computer Scientist, Engineer", "Teacher", "Scientist, Enviromentalist", "Pilot, Astronaut"];
 // variables
 var index = 0;
 var score = 0;
@@ -100,6 +68,7 @@ var get_question = function () {
         question_div.style.display = "none";
         career_div.style.display = "block";
         career_div.style.visibility = "visible";
+        compliment.innerHTML = "you likely careeer prospects may include <br> ".concat(get_career());
     }
 };
 var color_change = function () {
@@ -110,25 +79,16 @@ var color_change = function () {
     body.style.background = "rgb(".concat(color, ")");
 };
 var get_career = function () {
-    var avg = score / questions.length;
-    var career;
-    for (var i = 0; i < career_dict.length; i++) {
-        if (career_dict[i].score == avg) {
-            career = career_dict[i].career;
-            break;
-        }
-    }
-    return career;
+    var avg = Math.floor(score / questions.length);
+    return career_dict[avg];
 };
 // adding event listeners
-name_btn.addEventListener("click", get_name);
-// for (let y: number = 0; y < level_btns.length; y++)  {
-//     level_btns[y].btn.addEventListener("click", function ()  {
-//         console.log(level_btns[y].btn.innerHTML)
-//     })
-// }
+name_btn === null || name_btn === void 0 ? void 0 : name_btn.addEventListener("click", get_name);
 level_btns.forEach(function (btn) {
-    btn.btn.addEventListener("click", function () {
-        console.log(btn.btn.innerHTML);
+    var _a;
+    (_a = btn.btn) === null || _a === void 0 ? void 0 : _a.addEventListener("click", function () {
+        color_change();
+        score += btn.score;
+        get_question();
     });
 });
