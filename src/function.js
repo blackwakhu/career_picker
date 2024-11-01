@@ -27,7 +27,7 @@ var name_question = function () {
 };
 var choose_function = function (index, choose) {
     if (choose < questions.length) {
-        question_reader();
+        question_reader(choose);
         choose += 1;
     }
     else {
@@ -36,7 +36,10 @@ var choose_function = function (index, choose) {
         choose = 0;
     }
 };
-var question_reader = function () { };
+var question_reader = function (choose) {
+    beginner.innerHTML = questions[choose];
+    compliment.innerHTML = "Click the button to continue";
+};
 var read_career = function () { };
 var color_change = function () {
     var r = Math.floor(Math.random() * 255);

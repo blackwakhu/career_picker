@@ -32,7 +32,7 @@ let name_question = function ()  {
 
 let choose_function = function (index, choose)  {
     if (choose < questions.length)  {
-        question_reader()
+        question_reader(choose)
         choose += 1
     } else  {
         read_career()
@@ -41,7 +41,10 @@ let choose_function = function (index, choose)  {
     }
 }
 
-let question_reader = function () {}
+let question_reader = function (choose) {
+    beginner.innerHTML = questions[choose]
+    compliment.innerHTML = "Click the button to continue"
+}
 
 let read_career = function ()  {}
 
