@@ -1,12 +1,26 @@
 // buttons elements
-// const btn = document.querySelector<HTMLButtonElement>("#btn")
 const name_btn = document.querySelector<HTMLButtonElement>("#name_btn")
 const level_btns = [
-    document.querySelector<HTMLButtonElement>("#very_good"),
-    document.querySelector<HTMLButtonElement>("#good"),
-    document.querySelector<HTMLButtonElement>("#average"),
-    document.querySelector<HTMLButtonElement>("#bad"),
-    document.querySelector<HTMLButtonElement>("#very_badd")
+    {
+        "btn": document.querySelector<HTMLButtonElement>("#very_good"), 
+        "score": 1
+    },
+    {
+        "btn": document.querySelector<HTMLButtonElement>("#good"), 
+        "score": 2
+    },
+    {
+        "btn": document.querySelector<HTMLButtonElement>("#average"), 
+        "score": 3
+    },
+    {
+        "btn": document.querySelector<HTMLButtonElement>("#bad"), 
+        "score": 4
+    },
+    {
+        "btn": document.querySelector<HTMLButtonElement>("#very_badd"),
+        "score": 5
+    }
 ]
 
 // Body element
@@ -26,8 +40,16 @@ const name_div = document.querySelector<HTMLDivElement>("#name_div")
 const question_div = document.querySelector<HTMLDivElement>("#question_div")
 const career_div = document.querySelector<HTMLDivElement>("#career_div")
 
-const questions = ["are you creative?", "do you love nature?", "are you into helping others?", "do you love to build new things?", "do you consider yourself to be compassionate?"]
-const careers = ["doctor", "computer scientist", "teacher","engineer", "scientist","surgeon","pilot","enviromentalist","model","astronaught"]
+// questions list
+const questions = [
+    "Rate your creativity?", 
+    "Rate your love for the outdoors?", 
+    "Are you willing to be helpful?", 
+    "Do you love to build new things?", 
+    "Do you consider yourself to be compassionate?",
+    "Do you consider yourself to be empathetic?"
+]
+
 
 const career_dict = [
     {
@@ -74,12 +96,23 @@ let name_var:string = ""
 
 // main function for the btn in the names div
 let get_name = function ()  {
-    name_p.innerHTML = `Hello ${name_inp.value}`
+    name_p.innerHTML = `Hello ${name_inp?.value}`
     name_div.style.display = "none";
     question_div.style.display = "block";
     question_div.style.visibility = "visible";
+    
     // for changing the background color
     color_change()
+    
+    // getting the first question in the list
+    get_question()
+}
+
+let get_question = function ()  {
+    if (index < questions.length)  {
+        beginner.innerHTML = questions[index]
+        index += 1
+    }
 }
 
 let color_change = function () {
@@ -93,3 +126,5 @@ let color_change = function () {
 
 // adding event listeners
 name_btn.addEventListener("click", get_name)
+
+// level_btns.forEach()

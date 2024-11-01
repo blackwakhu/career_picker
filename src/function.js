@@ -1,12 +1,26 @@
 // buttons elements
-// const btn = document.querySelector<HTMLButtonElement>("#btn")
 var name_btn = document.querySelector("#name_btn");
 var level_btns = [
-    document.querySelector("#very_good"),
-    document.querySelector("#good"),
-    document.querySelector("#average"),
-    document.querySelector("#bad"),
-    document.querySelector("#very_badd")
+    {
+        "btn": document.querySelector("#very_good"),
+        "score": 1
+    },
+    {
+        "btn": document.querySelector("#good"),
+        "score": 2
+    },
+    {
+        "btn": document.querySelector("#average"),
+        "score": 3
+    },
+    {
+        "btn": document.querySelector("#bad"),
+        "score": 4
+    },
+    {
+        "btn": document.querySelector("#very_badd"),
+        "score": 5
+    }
 ];
 // Body element
 var body = document.querySelector("body");
@@ -21,8 +35,15 @@ var name_inp = document.querySelector("#name_inp");
 var name_div = document.querySelector("#name_div");
 var question_div = document.querySelector("#question_div");
 var career_div = document.querySelector("#career_div");
-var questions = ["are you creative?", "do you love nature?", "are you into helping others?", "do you love to build new things?", "do you consider yourself to be compassionate?"];
-var careers = ["doctor", "computer scientist", "teacher", "engineer", "scientist", "surgeon", "pilot", "enviromentalist", "model", "astronaught"];
+// questions list
+var questions = [
+    "Rate your creativity?",
+    "Rate your love for the outdoors?",
+    "Are you willing to be helpful?",
+    "Do you love to build new things?",
+    "Do you consider yourself to be compassionate?",
+    "Do you consider yourself to be empathetic?"
+];
 var career_dict = [
     {
         "career": [
@@ -63,12 +84,20 @@ var score = 0;
 var name_var = "";
 // main function for the btn in the names div
 var get_name = function () {
-    name_p.innerHTML = "Hello ".concat(name_inp.value);
+    name_p.innerHTML = "Hello ".concat(name_inp === null || name_inp === void 0 ? void 0 : name_inp.value);
     name_div.style.display = "none";
     question_div.style.display = "block";
     question_div.style.visibility = "visible";
     // for changing the background color
     color_change();
+    // getting the first question in the list
+    get_question();
+};
+var get_question = function () {
+    if (index < questions.length) {
+        beginner.innerHTML = questions[index];
+        index += 1;
+    }
 };
 var color_change = function () {
     var r = Math.floor(Math.random() * 255);
@@ -79,3 +108,4 @@ var color_change = function () {
 };
 // adding event listeners
 name_btn.addEventListener("click", get_name);
+// level_btns.forEach()
