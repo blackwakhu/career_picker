@@ -67,10 +67,10 @@ let get_name = function ()  {
     question_div.style.display = "block";
     score = 0
     index = 0
-    
+            
     // for changing the background color
     color_change()
-    
+            
     // getting the first question in the list
     get_question()
 }

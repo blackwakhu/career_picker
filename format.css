@@ -37,10 +37,13 @@ button:hover  {
     background-color: yellowgreen;
 }
 
-input  {
+input[type="text"]  {
     border-radius: 3px;
     border: 1px 1px 1px 1px;
     border: inset;
+    padding: 5px;
+    font-size: large;
+    width: 60%;
 }
 
 p  {
@@ -78,3 +81,4 @@ p  {
 #very_good  {
     background-color: rgba(0, 255, 0, .5) !important;
 }
+
