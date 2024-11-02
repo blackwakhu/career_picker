@@ -9,7 +9,7 @@ function App() {
   const [name, setName] = useState("")
   const getName = function (event)  {
     event.preventDefault()
-    alert("clicked")
+    alert("clicked ".concat(name))
   }
 
   return (
@@ -21,6 +21,7 @@ function App() {
         <h2>{namestr}</h2>
         <div>
           <form action="" onSubmit={getName}>
+            <input type="text" name="" id="" onChange={(e) => setName(e.target.value)}/>
             <input type="submit" value="Submit" />
           </form>
         </div>
