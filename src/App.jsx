@@ -6,6 +6,7 @@ import './App.css'
 function App() {
   const [count, setCount] = useState(0)
   const [namestr, setNamestr] = useState("What is your name?")
+  const [name, setName] = useState("")
 
   return (
     <>
