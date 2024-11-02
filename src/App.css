@@ -5,7 +5,7 @@
   text-align: center;
 }
 
-.namehideclass, .questionhideclass, .careerhideclass  {
+.hideclass  {
   display: none;
 }
 

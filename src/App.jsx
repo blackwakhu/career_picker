@@ -1,6 +1,4 @@
 import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
 import './App.css'
 
 const questions = [
@@ -12,6 +10,14 @@ const questions = [
   "Do you consider yourself to to be empathetic"
 ]
 
+const careers = [
+  "Doctor, Surgeon", 
+  "Computer Scientist, Engineer",
+  "Teacher",
+  "Scientist, Enviromentalists",
+  "Pilot, Astronaut"
+]
+
 function App() {
 
   const [index, setIndex] = useState(0)
@@ -21,13 +27,14 @@ function App() {
   const [name, setName] = useState("")
   const [questiontxt, setQuestiontxt] = useState(questions[index])
   const [namehideclass, setNameHideclass] = useState("")
-  const [questionhideclass, setQuestionHideclass] = useState("questionhideclass")
-  const [careerhideclass, setCareerameHideclass] = useState("careerhideclass")
+  const [questionhideclass, setQuestionHideclass] = useState("hideclass")
+  const [careerhideclass, setCareerameHideclass] = useState("hideclass")
+  const [careertxt, setCareertxt] = useState("")
   
   const getName = function (event)  {
     event.preventDefault()
     setNamestr(`Hello ${name}`)
-    setNameHideclass("namehideclass")
+    setNameHideclass("hideclass")
     setQuestionHideclass("")
   }
 
@@ -38,7 +45,11 @@ function App() {
       setIndex(index + 1)
       setQuestiontxt(questions[index])
     } else  {
+      setQuestionHideclass("hideclass")
+      setCareerameHideclass("")
       setIndex(0)
+      let avg = Math.floor(score / questions.length)
+      setScore(0)
     }
   }
 
@@ -51,7 +62,11 @@ function App() {
         <h2>{namestr}</h2>
         <div className={namehideclass}>
           <form action="" onSubmit={getName}>
-            <input type="text" name="" id="" onChange={(e) => setName(e.target.value)}/>
+            <input 
+              type="text"
+              name="" 
+              id="" 
+              onChange={(e) => setName(e.target.value)}/>
             <input type="submit" value="Submit" />
           </form>
         </div>
@@ -107,7 +122,10 @@ function App() {
               }>Very Good</button>
           </div>
         </div>
-        <div className={careerhideclass}></div>
+        <div className={careerhideclass}>
+          <h3>Your career prospect is likely to be</h3>
+          <h4></h4>
+        </div>
       </div>
     </>
   )
