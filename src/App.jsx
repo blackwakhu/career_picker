@@ -54,6 +54,13 @@ function App() {
     }
   }
 
+  const startagain = function (e)  {
+    e.preventDefault()
+    setCareerameHideclass("hideclass")
+    setNameHideclass("")
+    setNamestr("What is your name?")
+  }
+
   return (
     <>
       <div>
@@ -67,6 +74,7 @@ function App() {
               type="text"
               name="" 
               id="" 
+              required
               onChange={(e) => setName(e.target.value)}/>
             <input type="submit" value="Submit" />
           </form>
@@ -126,6 +134,7 @@ function App() {
         <div className={careerhideclass}>
           <h3>Your career prospect is likely to be</h3>
           <h4>{careertxt}</h4>
+          <button onClick={startagain} >Start a new Questionnaire</button>
         </div>
       </div>
     </>
