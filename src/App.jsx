@@ -14,18 +14,23 @@ const questions = [
 
 function App() {
   const [index, setIndex] = useState(0)
+  const [score, setScore] = useState(0)
+
   const [namestr, setNamestr] = useState("What is your name?")
   const [name, setName] = useState("")
-  const [questiontxt, setQuestiontxt] = useState(questions[0])
+  const [questiontxt, setQuestiontxt] = useState(questions[index])
   const [namehideclass, setNameHideclass] = useState("")
   const [questionhideclass, setQuestionHideclass] = useState("questionhideclass")
   const [careerhideclass, setCareerameHideclass] = useState("careerhideclass")
+  
   const getName = function (event)  {
     event.preventDefault()
     setNamestr(`Hello ${name}`)
     setNameHideclass("namehideclass")
     setQuestionHideclass("")
   }
+
+  const doQuestions = function (event, num)  {}
 
   return (
     <>
