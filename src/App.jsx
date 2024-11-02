@@ -16,7 +16,7 @@ function App() {
   const [index, setIndex] = useState(0)
   const [namestr, setNamestr] = useState("What is your name?")
   const [name, setName] = useState("")
-  const [namediv, setNamediv] = useState(false)
+  const [questiontxt, setQuestiontxt] = useState(questions[0])
   const [namehideclass, setNameHideclass] = useState("")
   const [questionhideclass, setQuestionHideclass] = useState("questionhideclass")
   const [careerhideclass, setCareerameHideclass] = useState("careerhideclass")
@@ -40,7 +40,28 @@ function App() {
             <input type="submit" value="Submit" />
           </form>
         </div>
-        <div className={questionhideclass}></div>
+        <div className={questionhideclass}>
+          <h3>{questiontxt}</h3>
+          <div>
+            <button>Very Bad</button>
+          </div>
+          <br />
+          <div>
+            <button>Bad</button>
+          </div>
+          <br />
+          <div>
+            <button>Average</button>
+          </div>
+          <br />
+          <div>
+            <button>Good</button>
+          </div>
+          <br />
+          <div>
+            <button>Very Good</button>
+          </div>
+        </div>
         <div className={careerhideclass}></div>
       </div>
     </>
