@@ -7,6 +7,10 @@ function App() {
   const [count, setCount] = useState(0)
   const [namestr, setNamestr] = useState("What is your name?")
   const [name, setName] = useState("")
+  const [namediv, setNamediv] = useState(false)
+  const [namehideclass, setNameHideclass] = useState("")
+  const [questionhideclass, setQuestionHideclass] = useState("questionhideclass")
+  const [careerhideclass, setCareerameHideclass] = useState("careerhideclass")
   const getName = function (event)  {
     event.preventDefault()
     alert("clicked ".concat(name))
@@ -19,14 +23,14 @@ function App() {
       </div>
       <div>
         <h2>{namestr}</h2>
-        <div>
+        <div className={namehideclass}>
           <form action="" onSubmit={getName}>
             <input type="text" name="" id="" onChange={(e) => setName(e.target.value)}/>
             <input type="submit" value="Submit" />
           </form>
         </div>
-        <div></div>
-        <div></div>
+        <div className={questionhideclass}></div>
+        <div className={careerhideclass}></div>
       </div>
     </>
   )
