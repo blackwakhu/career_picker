@@ -3,8 +3,17 @@ import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import './App.css'
 
+const questions = [
+  "Rate your creativity?",
+  "Rate your love for the outdoors?",
+  "Are you willing to be helpful?",
+  "Do you love to build new things?",
+  "Do you consider yourself to be compassionate?",
+  "Do you consider yourself to to be empathetic"
+]
+
 function App() {
-  const [count, setCount] = useState(0)
+  const [index, setIndex] = useState(0)
   const [namestr, setNamestr] = useState("What is your name?")
   const [name, setName] = useState("")
   const [namediv, setNamediv] = useState(false)
@@ -13,7 +22,9 @@ function App() {
   const [careerhideclass, setCareerameHideclass] = useState("careerhideclass")
   const getName = function (event)  {
     event.preventDefault()
-    alert("clicked ".concat(name))
+    setNamestr(`Hello ${name}`)
+    setNameHideclass("namehideclass")
+    setQuestionHideclass("")
   }
 
   return (
