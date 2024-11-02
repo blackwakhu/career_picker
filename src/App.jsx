@@ -13,6 +13,7 @@ const questions = [
 ]
 
 function App() {
+  
   const [index, setIndex] = useState(0)
   const [score, setScore] = useState(0)
 
@@ -30,7 +31,10 @@ function App() {
     setQuestionHideclass("")
   }
 
-  const doQuestions = function (event, num)  {}
+  const doQuestions = function (event, num)  {
+    event.preventDefault()
+    console.log(num)
+  }
 
   return (
     <>
@@ -48,23 +52,53 @@ function App() {
         <div className={questionhideclass}>
           <h3>{questiontxt}</h3>
           <div>
-            <button className="btn-question">Very Bad</button>
+            <button 
+              className="btn-question"
+              onClick={
+                function (e)  {
+                  doQuestions(e, 0)
+                }
+              }>Very Bad</button>
           </div>
           <br />
           <div>
-            <button className="btn-question">Bad</button>
+            <button 
+              className="btn-question"
+              onClick={
+                function (e)  {
+                  doQuestions(e, 1)
+                }
+              }>Bad</button>
           </div>
           <br />
           <div>
-            <button className="btn-question">Average</button>
+            <button 
+              className="btn-question"
+              onClick={
+                function (e)  {
+                  doQuestions(e, 2)
+                }
+              }>Average</button>
           </div>
           <br />
           <div>
-            <button className="btn-question">Good</button>
+            <button 
+              className="btn-question"
+              onClick={
+                function (e)  {
+                  doQuestions(e, 3)
+                }
+              }>Good</button>
           </div>
           <br />
           <div>
-            <button className="btn-question">Very Good</button>
+            <button 
+              className="btn-question"
+              onClick={
+                function (e)  {
+                  doQuestions(e, 4)
+                }
+              }>Very Good</button>
           </div>
         </div>
         <div className={careerhideclass}></div>
