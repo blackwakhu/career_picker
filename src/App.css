@@ -44,3 +44,7 @@
 .namehideclass, .questionhideclass, .careerhideclass  {
   display: none;
 }
+
+.btn-question  {
+  width: 70%;
+}

@@ -43,23 +43,23 @@ function App() {
         <div className={questionhideclass}>
           <h3>{questiontxt}</h3>
           <div>
-            <button>Very Bad</button>
+            <button className="btn-question">Very Bad</button>
           </div>
           <br />
           <div>
-            <button>Bad</button>
+            <button className="btn-question">Bad</button>
           </div>
           <br />
           <div>
-            <button>Average</button>
+            <button className="btn-question">Average</button>
           </div>
           <br />
           <div>
-            <button>Good</button>
+            <button className="btn-question">Good</button>
           </div>
           <br />
           <div>
-            <button>Very Good</button>
+            <button className="btn-question">Very Good</button>
           </div>
         </div>
         <div className={careerhideclass}></div>
