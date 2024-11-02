@@ -50,6 +50,7 @@ function App() {
       setIndex(0)
       let avg = Math.floor(score / questions.length)
       setScore(0)
+      setCareertxt(careers[avg])
     }
   }
 
@@ -124,7 +125,7 @@ function App() {
         </div>
         <div className={careerhideclass}>
           <h3>Your career prospect is likely to be</h3>
-          <h4></h4>
+          <h4>{careertxt}</h4>
         </div>
       </div>
     </>
