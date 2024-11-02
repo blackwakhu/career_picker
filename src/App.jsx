@@ -7,6 +7,10 @@ function App() {
   const [count, setCount] = useState(0)
   const [namestr, setNamestr] = useState("What is your name?")
   const [name, setName] = useState("")
+  const getName = function (event)  {
+    event.preventDefault()
+    alert("clicked")
+  }
 
   return (
     <>
@@ -15,7 +19,11 @@ function App() {
       </div>
       <div>
         <h2>{namestr}</h2>
-        <div></div>
+        <div>
+          <form action="" onSubmit={getName}>
+            <input type="submit" value="Submit" />
+          </form>
+        </div>
         <div></div>
         <div></div>
       </div>
