@@ -13,7 +13,7 @@ const questions = [
 ]
 
 function App() {
-  
+
   const [index, setIndex] = useState(0)
   const [score, setScore] = useState(0)
 
@@ -33,7 +33,13 @@ function App() {
 
   const doQuestions = function (event, num)  {
     event.preventDefault()
-    console.log(num)
+    if (index < questions.length)  {
+      setScore(score + num)
+      setIndex(index + 1)
+      setQuestiontxt(questions[index])
+    } else  {
+      setIndex(0)
+    }
   }
 
   return (
